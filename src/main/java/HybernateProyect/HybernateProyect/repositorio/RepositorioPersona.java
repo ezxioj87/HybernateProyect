@@ -4,11 +4,12 @@ import java.util.List;
 
 import org.hibernate.Session;
 
+import HybernateProyect.HybernateProyect.modelo.Cliente;
 import HybernateProyect.HybernateProyect.modelo.EstadoCivil;
 import HybernateProyect.HybernateProyect.modelo.Persona;
 import HybernateProyect.HybernateProyect.util.*;
 
-public class ReposiorioPersona {
+public class RepositorioPersona {
 
 	public static Integer crearPersona(final Persona persona) {
 		final Session sesion = HybernateUtil.getMiFactorio().getCurrentSession();
@@ -32,7 +33,7 @@ public class ReposiorioPersona {
 
 		try {
 			sesion.beginTransaction();
-			sesion.createQuery("Update Persona set per_nom = :nombre where per_id = :indentificador")
+			sesion.createQuery("Update Usuario set per_nom = :nombre where usu_id.idUsuario = :indentificador")
 					.setParameter("nombre", nombre).setParameter("indentificador", idPersona).uniqueResult();
 
 			// final Persona personaBBDD= (Persona)sesion.createQuery("from Persona where
@@ -59,7 +60,7 @@ public class ReposiorioPersona {
 		try {
 			sesion.beginTransaction();
 
-			final Persona personaBBDD = (Persona) sesion.createQuery("from Persona where PER_ID = :identificador")
+			final Persona personaBBDD = (Persona) sesion.createQuery("from Persona where usu_ID = :identificador")
 					.setParameter("identificador", idPersona).uniqueResult();
 			personaBBDD.setNombre(nombre);
 			personaBBDD.setApellidos("Delgado");
@@ -109,7 +110,7 @@ public class ReposiorioPersona {
 
 		try {
 			sesion.beginTransaction();
-			sesion.createQuery("delete Persona where per_id = :idPersona").setParameter("idPersona", idPersona)
+			sesion.createQuery("delete Persona where usu_id = :idPersona").setParameter("idPersona", idPersona)
 					.executeUpdate();
 
 			// final Persona personaBBDD= (Persona)sesion.createQuery("from Persona where
@@ -170,5 +171,6 @@ public class ReposiorioPersona {
 		}
 
 	}
+	
 
 }

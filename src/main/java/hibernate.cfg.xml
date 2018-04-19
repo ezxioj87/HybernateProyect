@@ -14,10 +14,13 @@
 		<property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.show_sql">true</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
-		<property name="hibernate.hbm2ddl.auto">none</property>
+		<property name="hibernate.hbm2ddl.auto">create</property>
 		<mapping class="HybernateProyect.HybernateProyect.modelo.VideoJuego"/>
 		<mapping class="HybernateProyect.HybernateProyect.modelo.Persona"/>
-	
+		<mapping class="HybernateProyect.HybernateProyect.modelo.Cliente"/>
+		<mapping class="HybernateProyect.HybernateProyect.modelo.Direccion"/>
+		<mapping class="HybernateProyect.HybernateProyect.modelo.Telefono"/>
+		
 	</session-factory>
 
 </hibernate-configuration>
