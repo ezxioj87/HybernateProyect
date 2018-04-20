@@ -1,4 +1,4 @@
-package es.aytos.hibernate.hibernate_dual;
+package HybernateProyect.HybernateProyect;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
